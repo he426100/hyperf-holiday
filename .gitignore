@@ -1,0 +1,7 @@
+vendor
+composer.lock
+.phpunit.result.cache
+.bashrc
+.idea
+.vscode/launch.json
+bin/co-pest

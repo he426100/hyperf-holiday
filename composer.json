@@ -1,0 +1,51 @@
+{
+    "name": "he426100/hyperf-holiday",
+    "description": "爬取百度日历工作日",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "he426100",
+            "email": "mrpzx001@gmail.com"
+        }
+    ],
+    "require": {
+        "hyperf/cache": "~3.0.0",
+        "hyperf/command": "~3.0.0",
+        "hyperf/config": "~3.0.0",
+        "hyperf/context": "~3.0.0",
+        "hyperf/di": "~3.0.0",
+        "hyperf/framework": "~3.0.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.16",
+        "hyperf/testing": "~3.0.0",
+        "phpstan/phpstan": "^1.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "He426100\\Holiday\\": "src/"
+        },
+        "files": [
+            "src/functions.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "He426100\\Holiday\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "scripts": {
+        "test": "co-phpunit --prepend tests/bootstrap.php -c phpunit.xml --colors=always",
+        "analyse": "phpstan analyse --memory-limit 1024M -l 0 ./src",
+        "cs-fix": "php-cs-fixer fix $1"
+    },
+    "extra": {
+        "hyperf": {
+            "config": "He426100\\Holiday\\ConfigProvider"
+        }
+    }
+}
